@@ -9,7 +9,6 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-
 // Configurar CORS
 app.use(cors({ origin: "http://localhost:3000" }));
 app.use(express.json());
@@ -26,12 +25,16 @@ const __dirname = path.dirname(__filename);
 
 // Servir React correctamente
 const frontendPath = path.join(__dirname, "../frontend/build");
-
 app.use(express.static(frontendPath));
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
 
-// Iniciar servidor
-app.listen(PORT, () => console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`));
+// Exportar `app` para pruebas
+export default app;
+
+// Iniciar servidor solo si no está en test
+if (process.env.NODE_ENV !== "test") {
+  app.listen(PORT, () => console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`));
+}
