@@ -25,10 +25,19 @@ Repositorio oficial: [github.com/IsaEsMar03/comfaexpress](https://github.com/Isa
 
 ---
 
-## 🚀 Instalación
+## 📦 Dependencias Necesarias
 
-1. Clona el repositorio:
+Asegúrate de instalar las siguientes dependencias para que el proyecto funcione correctamente:
+
+- **Express**: Framework web minimalista para Node.js.
+- **Sequelize**: ORM para interactuar con MySQL.
+- **jsonwebtoken**: Para la autenticación basada en tokens JWT.
+- **bcryptjs**: Para la encriptación de contraseñas.
+- **cors**: Para habilitar solicitudes entre diferentes dominios.
+- **dotenv**: Para manejar variables de entorno.
+- **mysql2**: Cliente MySQL para Sequelize.
+
+Puedes instalar todas las dependencias ejecutando el siguiente comando:
 
 ```bash
-git clone https://github.com/IsaEsMar03/comfaexpress.git
-cd comfaexpress
+npm install
