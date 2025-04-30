@@ -41,7 +41,7 @@ router.post("/clientes", registrarCliente);
 // Ruta para registrar pedido (incluye usuario_id)
 router.post("/pedidos", registrarPedido);
 
-// ✅ Rutas para turnos
+//  Rutas para turnos
 router.post("/turnos", registrarTurno);             // Registrar turno
 router.get("/turnos", obtenerTurnos);               // Obtener todos los turnos
 
